@@ -13,12 +13,15 @@
     <div class="blok1">
     <h3>Ryby zamieszkujące rzeki</h3>
     <ol>
-        <li>
-            Szczupak pływa w rzece Warta-Obrzycko, Wielkopolskie
-        </li>
-        <li> 
-            Leszcz pływa w rzece Przemsza k. Okradzinowa, Slaskie
-        </li>
+    <?php
+				$con = mysqli_connect('localhost', 'root', '', 'wedkowanie');
+				
+				$q1 = "SELECT ryby.nazwa, lowisko.akwen, lowisko.wojewodztwo FROM ryby INNER JOIN lowisko ON ryby.id = lowisko.Ryby_id WHERE lowisko.rodzaj = 3;";
+				$res1 = mysqli_query($con, $q1);
+				while ($row = mysqli_fetch_array($res1)) {
+					echo "<li>$row[0] pływa w rzece $row[1], $row[2]</li>";
+				}
+				?>
     </ol>
 </div>
 <div class="blok2">
@@ -30,32 +33,14 @@
     <td class="first3">Gatunek</td>
     <td class="first3">Występowanie</td>
     </tr>
-    <tr>
-    <td>1</td>
-    <td>Szczupak</td>
-    <td>stawy, rzeki</td>
-    </tr>
-    <tr>
-    <td>3</td>
-    <td>Sandacz</td>
-    <td>stawy, jeziora, rzeki</td>
-    </tr>
-    <tr>
-    <td>4</td>
-    <td>Okon</td>
-    <td>rzeki</td>
-    </tr>
-    <tr>
-    <td>5</td>
-    <td>Sum</td>
-    <td>jeziora, rzeki</td>
-    </tr>
-    <tr>
-    <td>6</td>
-    <td>Dorsz</td>
-    <td>morza, oceany</td>
-    </tr>
-    <tr>
+    <?php
+				$q2 = "SELECT id, nazwa, wystepowanie FROM ryby WHERE styl_zycia = 1;";
+				$res2 = mysqli_query($con, $q2);
+				while ($row = mysqli_fetch_array($res2)) {
+					echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td></tr>";
+				}
+				mysqli_close($con);
+				?>
   
     </tbody>
     </table>
