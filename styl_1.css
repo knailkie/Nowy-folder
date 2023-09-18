@@ -1,0 +1,58 @@
+body {
+    font-family: Helvetica;
+}
+header, footer {
+background-color: #00838F;
+color: white;
+text-align: center;
+padding: 5px;
+font-size: 130%;
+}
+.griid {
+    display: grid;
+    grid-template-columns: 55%, 45%;
+}
+.nagorze {
+    grid-column-start: 1;
+    background-color: #EFEFEF;
+}
+.obraz {
+    grid-column-start: 2;
+    background-color: #4FB3BF;
+    height: 450px;
+    text-align: center;
+}
+.blok1 {
+    height: 150px;
+}
+.blok2 {
+    height: 300px;
+}
+.obraz {
+    
+    padding: 20px;
+}
+img {
+    box-shadow: 10px 10px 7px 0px rgba(105, 105, 105, 1);
+}
+table, tr, td  {
+    border: 1px solid #4FB3BF;
+    border-collapse: collapse;
+}
+table {
+    width: 80%;
+}
+tr, td{
+    
+    padding: 4px;
+
+}
+td:hover {
+    background-color: #4FB3BF;
+}
+.kweren {
+    margin-top: 20px;
+}
+.first3 {
+    font-weight: 600;
+}
